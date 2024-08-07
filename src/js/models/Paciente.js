@@ -4,37 +4,39 @@ function Paciente(nombre, edad, rut, diagnostico) {
     let _rut = rut;
     let _diagnostico = diagnostico;
 
-    // Getters
-    this.getNombre = function() {
-        return _nombre;
-    };
+    Object.defineProperty(this, 'nombre', {
+        get: function () {
+            return _nombre;
+        },
+        set: function (value) {
+            _nombre = value;
+        }
+    });
 
-    this.getEdad = function() {
-        return _edad;
-    };
+    Object.defineProperty(this, 'edad', {
+        get: function () {
+            return _edad;
+        },
+        set: function (value) {
+            _edad = value;
+        }
+    });
 
-    this.getRut = function() {
-        return _rut;
-    };
+    Object.defineProperty(this, 'rut', {
+        get: function () {
+            return _rut;
+        },
+        set: function (value) {
+            _rut = value;
+        }
+    });
 
-    this.getDiagnostico = function() {
-        return _diagnostico;
-    };
-
-    // Setters
-    this.setNombre = function(nombre) {
-        _nombre = nombre;
-    };
-
-    this.setEdad = function(edad) {
-        _edad = edad;
-    };
-
-    this.setRut = function(rut) {
-        _rut = rut;
-    };
-
-    this.setDiagnostico = function(diagnostico) {
-        _diagnostico = diagnostico;
-    };
+    Object.defineProperty(this, 'diagnostico', {
+        get: function () {
+            return _diagnostico;
+        },
+        set: function (value) {
+            _diagnostico = value;
+        }
+    });
 }
